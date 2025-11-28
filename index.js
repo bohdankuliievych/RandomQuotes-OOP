@@ -1,3 +1,5 @@
 import RandomQuotesApp from "./src/classes/RandomQuotesApp.js";
 
 new RandomQuotesApp();
+
+// https://quoteslate.vercel.app/

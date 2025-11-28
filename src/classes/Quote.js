@@ -7,6 +7,7 @@ class Quote {
   render() {
     const quoteElement = document.getElementById("quote");
     const authorElement = document.getElementById("author");
+
     quoteElement.textContent = this.text;
     authorElement.textContent = this.author;
   }
