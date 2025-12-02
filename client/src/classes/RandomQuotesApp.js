@@ -19,10 +19,9 @@ class RandomQuotesApp {
       const randomQuote = RandomQuote.getRandomQuote();
       this.changeCurrentQuote(randomQuote);
     });
-    this.randomQuoteAPIBtn.addEventListener("click", () => {
-      RandomQuote.getRandomQuoteViaAPI().then((result) => {
-        this.changeCurrentQuote(result);
-      });
+    this.randomQuoteAPIBtn.addEventListener("click", async () => {
+      const result = await RandomQuote.getRandomQuoteViaAPI();
+      this.changeCurrentQuote(result);
     });
   }
 }
