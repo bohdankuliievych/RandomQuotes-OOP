@@ -12,7 +12,14 @@ body {
 .container p {
   min-height: 3em;
 }
-
+.container .buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.container .buttons button {
+  flex: 1 1 100px;
+}
 body.dark {
   background-color: #303030;
   color: #fafafa;
@@ -21,10 +28,16 @@ body.dark {
   padding: 10px 20px;
   font-size: 16px;
   background-color: #007bff;
-  color: #fff;
+  color: #fafafa;
   border: none;
   cursor: pointer;
   border-radius: 10px;
+}
+#random-quote-own-api-btn {
+  background-color: green;
+}
+#random-quote-public-api-btn {
+  background-color: darkorange;
 }
 
 .btn:hover {

@@ -4,7 +4,12 @@ import RandomQuote from "./RandomQuote.js";
 class RandomQuotesApp {
   constructor() {
     this.randomQuoteBtn = document.getElementById("random-quote-btn");
-    this.randomQuoteAPIBtn = document.getElementById("random-quote-api-btn");
+    this.randomQuotePublicAPIBtn = document.getElementById(
+      "random-quote-public-api-btn"
+    );
+    this.randomQuoteOwnAPIBtn = document.getElementById(
+      "random-quote-own-api-btn"
+    );
     this.currentQuote = null;
     this.init();
   }
@@ -19,8 +24,12 @@ class RandomQuotesApp {
       const randomQuote = RandomQuote.getRandomQuote();
       this.changeCurrentQuote(randomQuote);
     });
-    this.randomQuoteAPIBtn.addEventListener("click", async () => {
-      const result = await RandomQuote.getRandomQuoteViaAPI();
+    this.randomQuotePublicAPIBtn.addEventListener("click", async () => {
+      const result = await RandomQuote.getRandomQuoteViaPublicAPI();
+      this.changeCurrentQuote(result);
+    });
+    this.randomQuoteOwnAPIBtn.addEventListener("click", async () => {
+      const result = await RandomQuote.getRandomQuoteViaOwnAPI();
       this.changeCurrentQuote(result);
     });
   }
